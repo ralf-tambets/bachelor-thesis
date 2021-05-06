@@ -1,0 +1,36 @@
+# FAIRFAX_2014
+MARKER SNP
+ALLELE REF ALT
+EFFECT beta
+PVALUE p-value
+WEIGHTLABEL DONTUSECOLUMN
+
+#==============================
+
+#FAIRFAX_2018
+DEFAULTWEIGHT 176
+
+PROCESS ff18_IFI6_whole_genome.meta.tsv.gz
+
+#==============================
+
+#QUACH_2016_pop_1
+DEFAULTWEIGHT 96
+
+PROCESS q16_pop_1_IFI6_whole_genome.meta.tsv.gz
+
+#==============================
+
+#QUACH_2016_pop_2
+DEFAULTWEIGHT 88
+
+PROCESS q16_pop_2_IFI6_whole_genome.meta.tsv.gz
+
+#==============================
+
+#FINAL_ANALYSIS
+
+OUTFILE METAANALYSIS_ilma_ff14_ .tbl
+ANALYZE
+
+QUIT

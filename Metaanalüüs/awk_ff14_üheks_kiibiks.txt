@@ -1,0 +1,1 @@
+zcat ff14_IFI6_whole_genome.meta.tsv.gz | awk '{if($2=="ENSG00000126709_a"){$2="ENSG00000126709";print}if($2=="gene"){print}}' | gzip > ff14_chip_A_IFI6_whole_genome.meta.tsv.gz

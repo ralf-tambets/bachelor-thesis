@@ -1,0 +1,4 @@
+printf 'SNP\ngene\nbeta\nt-stat\np-value\nFDR\nREF\nALT' > 8_columns.tsv
+csvtk transpose 8_columns.tsv -T | gzip > meta_header.tsv.gz
+tail -n+2 ${name}.txt | awk '{split($1,a,"_");$7 = a[3];$8 = a[4];print}' | gzip > meta_body.tsv.gz
+zcat meta_header.tsv.gz meta_body.tsv.gz | bgzip > ${name}.meta.tsv.gz

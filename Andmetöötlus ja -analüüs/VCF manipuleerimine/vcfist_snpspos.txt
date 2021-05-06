@@ -1,0 +1,4 @@
+printf 'ID\nCHROM\nPOS' > 3_columns.tsv
+csvtk transpose 3_columns.tsv -T | gzip > snps_header.tsv.gz
+bcftools query -f "%ID\\t%CHROM\\t%POS\\n" ${vcf} | gzip > snps_body.tsv.gz
+zcat snps_header.tsv.gz snps_body.tsv.gz | bgzip > ${simpleName}.snps.tsv.gz

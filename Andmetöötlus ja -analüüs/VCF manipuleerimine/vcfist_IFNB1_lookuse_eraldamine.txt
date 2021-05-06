@@ -1,0 +1,1 @@
+bcftools view -r 9:20318520-21318520 ${vcf}> ${simpleName}.vcf
